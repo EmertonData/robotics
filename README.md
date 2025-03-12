@@ -560,7 +560,7 @@ python lerobot/scripts/control_robot.py \
   --control.push_to_hub=false
 ```
 
-Note: You can resume recording by adding `--control.resume=true`. # TO CHECK!!!
+Note: You can resume recording by adding `--control.resume=true`. 
 
 
 ## H. Visualize a dataset
