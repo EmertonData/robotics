@@ -1,0 +1,83 @@
+# Build directories and files
+build/
+dist/
+bin/
+lib/
+out/
+personal/*
+outputs/*
+
+# Compiled files
+*.o
+*.so
+*.a
+*.dylib
+*.dll
+*.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+.env
+.venv
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ROS specific
+.catkin_workspace
+devel/
+logs/
+.catkin_tools/
+
+# C/C++
+*.d
+*.slo
+*.lo
+*.obj
+*.gch
+*.pch
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+log/
+logs/
+
+# Dependencies
+node_modules/
+
+# Simulation files
+*.gazebo
+*.world.yaml
+
+# Data files (consider your specific needs)
+*.bag
+*.csv
+*.dat
+
+# Documentation generated files
+doc/_build/
+
+# Temporary files
+tmp/
+temp/
