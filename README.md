@@ -26,6 +26,10 @@
 # Tutorial
 ## A. Install repository
 
+On your computer, create a folder that will contain all the code. 
+Then, start a new shell and navigate to the folder you just created. 
+Follow the steps below by running the commands in your shell.
+
 ### 1. Download the source code:
 ```bash
 git clone https://github.com/EmertonData/robotics.git
