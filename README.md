@@ -17,7 +17,7 @@
 <div align="center">
   <img src="media/robot_img.jpg" width="50%">
 
-  <p><strong>Unleash your robot’s potential in no time – just a few clicks on your laptop !</strong>></p>
+  <p><strong>Unleash your robot’s potential in no time – just a few clicks on your laptop !</strong></p>
   <p><strong>Then kick back and enjoy watching it come to life and perform on its own! 🚀</strong></p></div>
 
 # Introduction
@@ -223,7 +223,7 @@ Redo the process for all your motors until ID 6. **Do the same for the 6 motors 
 > From step 1 to 22, it is the same for both leader and follower arms.
 > **❗IMPORTANT!** Make sure to not turn the motors in any way! They should stay in the same position after the calibration
 
-### Before: Remove the gears of the 6 leader motors
+### Before: Remove the gears of the 6 leader motors, for the leader arm only ❗
 
 <details>
 <summary><strong>Video removing gears</strong></summary>
