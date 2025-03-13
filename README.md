@@ -1,7 +1,9 @@
 
 <img src="media/logo ED_.jpg">
 
-# AI Robotics by Emerton Data in collaboration with LeRobot Hugging Face
+<h1 align="center">
+  <p>AI Robotics by Emerton Data in collaboration with LeRobot Hugging Face</p>
+</h1>
 
 <p align="center">
   <img src="media/lerobot-logo-thumbnail.png" style="width:60%">
