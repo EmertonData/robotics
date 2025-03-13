@@ -15,7 +15,7 @@
 </h2>
 
 <div align="center">
-  <img src="media/robot_img.jpg" width="50%">
+  <img src="media/robot_img.jpg" width="50%"></div>
 
   <p>Unleash your robot’s potential in no time – just a few clicks on your laptop.</p>
   <p>Then kick back and enjoy watching it come to life and perform on its own! 🚀</p>
