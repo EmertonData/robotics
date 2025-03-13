@@ -1,5 +1,5 @@
 
-<img src="media/logo ED_.jpg" style="height:100%">
+<img src="media/logo ED_.jpg">
 
 # AI Robotics by Emerton Data in collaboration with LeRobot Hugging Face
 
