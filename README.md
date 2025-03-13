@@ -57,7 +57,7 @@ On Windows:
 .venv\Scripts\activate
 ```
 
-### 4. Install dependencies:
+### 4. Install dependencies for the feetech motors:
 ```bash
 pip install -e ".[feetech]"
 ```
@@ -67,7 +67,7 @@ pip install -e ".[feetech]"
 brew install ffmpeg
 ```
 
-Great! You are now done installing the repository and we can begin configuring the SO100 arms.
+Great :wink:! You are now done installing the repository and we can begin configuring the SO100 arms :robot:.
 
 ## B. Configure the Motors
 
