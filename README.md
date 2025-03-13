@@ -249,6 +249,7 @@ Follow the video for removing gears. You need to remove the gear for the motors 
 
 **Note:**
 This video provides visual guidance for assembling the arms, but it doesn't specify when or how to do the wiring. Inserting the cables beforehand is much easier than doing it afterward. The first arm may take a bit more than 1 hour to assemble, but once you get used to it, you can assemble the second arm in under 1 hour.
+
 While not specified in the video, here are a few important things to keep in mind during assembly: The M2x5 TAP Screws are the little screws, and the M3x6 Machine Screws are the big screws. When mounting the robot, be sure to use both circular plates. It's also easier to add the circular plates after the motor is in place. Finally, remember to remove the plastic covering the holes before inserting the screws, as this thin layer prevents the screws from fitting properly.
 
 ---
