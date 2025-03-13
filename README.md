@@ -7,8 +7,8 @@
   <img src="media/lerobot-logo-thumbnail.png" style="width:60%">
 </p>
 
-<p align="center">
-  ## Build Your Own Robot
+<p style="font-size: 40px;"align="center">
+  Build Your Own Robot
 </p>
 
 # Introduction
