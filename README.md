@@ -1,11 +1,13 @@
 
 <img src="media/logo ED_.jpg">
 
-# AI Robotics by Emerton Data in collaboration with LeRobot Hugging Face
+<h1 style="text-align: center;">AI Robotics by Emerton Data in collaboration with LeRobot Hugging Face</h1>
 
 <p align="center">
   <img src="media/lerobot-logo-thumbnail.png" style="width:60%">
 </p>
+
+<h2 style="text-align: center;">Build Your Own Robot !</h2>
 
 # Introduction
 
