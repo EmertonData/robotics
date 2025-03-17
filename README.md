@@ -470,13 +470,22 @@ You will need to move the follower arm to these positions sequentially:
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <img src="media/so100/follower_zero.webp?raw=true" alt="SO-100 follower arm zero position" title="SO-100 follower arm zero position" style="width:100%;"> | <img src="media/so100/follower_rotated.webp?raw=true" alt="SO-100 follower arm rotated position" title="SO-100 follower arm rotated position" style="width:100%;"> | <img src="media/so100/follower_rest.webp?raw=true" alt="SO-100 follower arm rest position" title="SO-100 follower arm rest position" style="width:100%;"> |
 
-Make sure both arms are connected and run this script to launch manual calibration:
+Make sure both arms are connected and run this script to launch manual calibration on Mac:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
   --robot.cameras='{}' \
   --control.type=calibrate \
   --control.arms='["main_follower"]'
+```
+
+Run this script to launch manual calibration on Windows:
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --robot.cameras="{}" `
+  --control.type=calibrate
+  --control.arms="["main_follower"]"
 ```
 
 #### b. Manual calibration of leader arm
