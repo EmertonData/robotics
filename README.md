@@ -688,7 +688,7 @@ Training should take several hours. You will find checkpoints in `outputs/train/
 > [!REMEMBER]
 > The cameras have to be in the same position as when recording the dataset.
 
-You can use the `record` function from [`lerobot/scripts/control_robot.py`](../lerobot/scripts/control_robot.py) but with a policy checkpoint as input. For instance, run this command to record 10 evaluation episodes:
+You can use the `record` function from [`lerobot/scripts/control_robot.py`](../lerobot/scripts/control_robot.py) but with a policy checkpoint as input. For instance, run this command to record 10 evaluation episodes on macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
@@ -708,3 +708,18 @@ python lerobot/scripts/control_robot.py \
 As you can see, it's almost the same command as previously used to record your training dataset. Two things changed:
 1. There is an additional `--control.policy.path` argument which indicates the path to your policy checkpoint with  (e.g. `outputs/train/eval_act_so100_test/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g. `${HF_USER}/act_so100_test`).
 2. The name of dataset begins by `eval` to reflect that you are running inference (e.g. `${HF_USER}/eval_act_so100_test`).
+
+On Windows, you can run this command :
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --control.type=record `
+  --control.fps=30 `
+  --control.single_task="Grasp a block and put it in the bin." `
+  --control.repo_id="$env:HF_USER/so100_test" `
+  --control.warmup_time_s=5 `
+  --control.episode_time_s=15 `
+  --control.reset_time_s=10 `
+  --control.num_episodes=2 `
+  --control.push_to_hub=true
+```
