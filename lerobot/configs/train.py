@@ -44,7 +44,7 @@ class TrainPipelineConfig(HubMixin):
     seed: int | None = 1000
     # Number of workers for the dataloader.
     num_workers: int = 4 
-    batch_size: int = 76 # number to be changed to 80
+    batch_size: int = 8 # number to be changed to 80
     steps: int = 10000 # number to be changed to 100_000
     eval_freq: int = 2000 # number to be changed to 20_000
     log_freq: int = 20 # number to be changed to 200
