@@ -470,7 +470,7 @@ You will need to move the follower arm to these positions sequentially:
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <img src="media/so100/follower_zero.webp?raw=true" alt="SO-100 follower arm zero position" title="SO-100 follower arm zero position" style="width:100%;"> | <img src="media/so100/follower_rotated.webp?raw=true" alt="SO-100 follower arm rotated position" title="SO-100 follower arm rotated position" style="width:100%;"> | <img src="media/so100/follower_rest.webp?raw=true" alt="SO-100 follower arm rest position" title="SO-100 follower arm rest position" style="width:100%;"> |
 
-Make sure both arms are connected and run this script to launch manual calibration on Mac:
+Make sure both arms are connected and run this script to launch manual calibration on macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
@@ -495,7 +495,7 @@ Follow step 6 of the [assembly video](https://youtu.be/FioA2oeFZ5I?t=724) which 
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <img src="media/so100/leader_zero.webp?raw=true" alt="SO-100 leader arm zero position" title="SO-100 leader arm zero position" style="width:100%;"> | <img src="media/so100/leader_rotated.webp?raw=true" alt="SO-100 leader arm rotated position" title="SO-100 leader arm rotated position" style="width:100%;"> | <img src="media/so100/leader_rest.webp?raw=true" alt="SO-100 leader arm rest position" title="SO-100 leader arm rest position" style="width:100%;"> |
 
-Run this script to launch manual calibration:
+Run this script to launch manual calibration on macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
@@ -504,14 +504,31 @@ python lerobot/scripts/control_robot.py \
   --control.arms='["main_leader"]'
 ```
 
+Run this script to launch manual calibration on Windows:
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --robot.cameras="{}" `
+  --control.type=calibrate
+  --control.arms="["main_leader"]"
+```
+
 ## E. Teleoperate
 
 **Simple teleop**
-Then you are ready to teleoperate your robot! Run this simple script (it won't connect and display the cameras):
+Then you are ready to teleoperate your robot! Run this simple script on macOS (it won't connect and display the cameras):
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
   --robot.cameras='{}' \
+  --control.type=teleoperate
+```
+
+Run this simple script on Windows:
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --robot.cameras="{}" `
   --control.type=teleoperate
 ```
 
