@@ -615,6 +615,8 @@ echo $env:HF_USER
 ```
 
 Record 2 episodes:
+
+On macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
@@ -630,6 +632,20 @@ python lerobot/scripts/control_robot.py \
   --control.push_to_hub=false
 ```
 
+On Windows:
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --control.type=record `
+  --control.fps=30 `
+  --control.single_task="Grasp a block and put it in the bin." `
+  --control.repo_id="$env:HF_USER/so100_test" `
+  --control.warmup_time_s=5 `
+  --control.episode_time_s=15 `
+  --control.reset_time_s=10 `
+  --control.num_episodes=2 `
+  --control.push_to_hub=false
+```
 Note: You can resume recording by adding `--control.resume=true`. 
 
 
@@ -644,14 +660,24 @@ echo ${HF_USER}/so100_test
 </details>
 
 If you didn't upload with `--control.push_to_hub=false`, you can visualize the dataset locally with (a window can be opened in the browser `http://127.0.0.1:9090` with the visualization tool):
+
+On macOS:
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
   --repo-id ${HF_USER}/so100_test
 ```
 
+On Windows:
+```bash
+python lerobot.scripts.visualize_dataset_html `
+  --repo-id "$env:HF_USER/so100_test"
+```
+
 ## I. Replay an episode
 
 Now try to replay the first episode on your robot:
+
+On macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
@@ -661,9 +687,19 @@ python lerobot/scripts/control_robot.py \
   --control.episode=0
 ```
 
+On Windows:
+```bash
+python lerobot.scripts.control_robot `
+  --robot.type=so100 `
+  --control.type=replay `
+  --control.fps=30 `
+  --control.repo_id="$env:HF_USER/so100_test" `
+  --control.episode=0
+```
+
 ## J. Train a policy
 
-To train a policy to control your robot, use the [`python lerobot/scripts/train.py`](../lerobot/scripts/train.py) script. A few arguments are required. Here is an example command:
+To train a policy to control your robot, use the [`python lerobot/scripts/train.py`](../lerobot/scripts/train.py) script. A few arguments are required. Here is an example command on macOS:
 ```bash
 python lerobot/scripts/train.py \
   --dataset.repo_id=${HF_USER}/so100_test \
@@ -679,6 +715,18 @@ Let's explain it:
 2. We provided the policy with `policy.type=act`. This loads configurations from [`configuration_act.py`](../lerobot/common/policies/act/configuration_act.py). Importantly, this policy will automatically adapt to the number of motor sates, motor actions and cameras of your robot (e.g. `laptop` and `phone`) which have been saved in your dataset.
 4. We provided `policy.device=cuda` since we are training on a Nvidia GPU, but you could use `policy.device=mps` to train on Apple silicon.
 5. We provided `wandb.enable=true` to use [Weights and Biases](https://docs.wandb.ai/quickstart) for visualizing training plots. This is optional but if you use it, make sure you are logged in by running `wandb login`.
+
+
+Here is an example on Windows:
+```bash
+python lerobot.scripts.train `
+  --dataset.repo_id="$env:HF_USER/so100_test `
+  --policy.type=act `
+  --output_dir=outputs/train/act_so100_test `
+  --job_name=act_so100_test `
+  --policy.device=cuda `
+  --wandb.enable=true
+```
 
 Training should take several hours. You will find checkpoints in `outputs/train/act_so100_test/checkpoints`.
 
@@ -716,10 +764,12 @@ python -m lerobot.scripts.control_robot `
   --control.type=record `
   --control.fps=30 `
   --control.single_task="Grasp a block and put it in the bin." `
-  --control.repo_id="$env:HF_USER/so100_test" `
+  --control.repo_id="$env:HF_USER/eval_act_so100_test" `
+  --control.tags="["tutorial"]" `
   --control.warmup_time_s=5 `
-  --control.episode_time_s=15 `
-  --control.reset_time_s=10 `
-  --control.num_episodes=2 `
+  --control.episode_time_s=30 `
+  --control.reset_time_s=30 `
+  --control.num_episodes=10 `
   --control.push_to_hub=true
+  --control.policy.path=outputs/train/act_so100_test/checkpoints/last/pretrained_model
 ```
