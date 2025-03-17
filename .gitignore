@@ -6,6 +6,7 @@ lib/
 out/
 personal/*
 outputs/*
+.cache/*
 
 # Compiled files
 *.o
