@@ -45,12 +45,12 @@ class TrainPipelineConfig(HubMixin):
     # Number of workers for the dataloader.
     num_workers: int = 4 
     batch_size: int = 76 # number to be changed to 80
-    steps: int = 10000 # number to be changed to 100_000
-    eval_freq: int = 2000 # number to be changed to 20_000
+    steps: int = 5000 # number to be changed to 100_000
+    eval_freq: int = 1000 # number to be changed to 20_000
     log_freq: int = 20 # number to be changed to 200
     save_checkpoint: bool = True
     # Checkpoint is saved every `save_freq` training iterations and after the last training step.
-    save_freq: int = 2000 # number to be changed to 20_000
+    save_freq: int = 100 # number to be changed to 20_000
     use_policy_training_preset: bool = True
     optimizer: OptimizerConfig | None = None
     scheduler: LRSchedulerConfig | None = None
