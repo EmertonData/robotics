@@ -133,9 +133,9 @@ class ACTConfig(PreTrainedConfig):
     kl_weight: float = 10.0
 
     # Training preset
-    optimizer_lr: float = 5e-4
-    optimizer_weight_decay: float = 5e-3
-    optimizer_lr_backbone: float = 5e-4
+    optimizer_lr: float = 1e-4
+    optimizer_weight_decay: float = 1e-3
+    optimizer_lr_backbone: float = 1e-4
 
     def __post_init__(self):
         super().__post_init__()
