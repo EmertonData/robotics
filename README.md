@@ -564,9 +564,17 @@ Images have been saved to outputs/images_from_opencv_cameras
 
 #### Teleop with displaying cameras
 
+On macOS:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=so100 \
+  --control.type=teleoperate
+```
+
+On Windows:
+```bash
+python -m lerobot.scripts.control_robot `
+  --robot.type=so100 `
   --control.type=teleoperate
 ```
 
@@ -576,11 +584,15 @@ Once you're familiar with teleoperation, you can record your first dataset with 
 
 <details>
 <summary><strong>Hugging Face Hub Setup (Optional)</strong></summary>
-If you want to use the Hugging Face hub features for uploading your dataset and you haven't previously done it, make sure you've logged in using a write-access token, which can be generated from the [Hugging Face settings](https://huggingface.co/settings/tokens):
+If you want to use the Hugging Face hub features for uploading your dataset and you haven't previously done it, make sure you've logged in using a write-access token, which can be generated from the [Hugging Face settings](https://huggingface.co/settings/tokens) for macOS:
 ```bash
 huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
 ```
-
+and for Windows : 
+```bash
+huggingface-cli login --token "HUGGINGFACE_TOKEN" --add-to-git-credential
+```
+  
 Store your Hugging Face repository name in a variable to run these commands:
 ```bash
 HF_USER=$(huggingface-cli whoami | head -n 1)
@@ -589,9 +601,17 @@ echo $HF_USER
 </details>
 
 Set_up your username, under which the dataset will be saved:
+
+On macOS:
 ```bash
 HF_USER=your_username
 echo $HF_USER
+```
+
+On Windows:
+```bash
+$env:HF_USER="your_username"
+echo $env:HF_USER
 ```
 
 Record 2 episodes:
