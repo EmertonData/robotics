@@ -24,7 +24,7 @@ SCHEDULER_STATE = "scheduler_state.json"
 # cache dir
 # print(HF_HOME)
 # default_cache_path = Path(HF_HOME) / "lerobot"
-HF_LEROBOT_HOME = Path(__file__.split("lerobot")[0]+'/personal')  # Path(os.getenv("HF_LEROBOT_HOME", default_cache_path)).expanduser() #Path("/content/drive/MyDrive/Hackathon/lerobot")
+HF_LEROBOT_HOME = Path(os.getenv("HF_LEROBOT_HOME", Path(__file__.split("lerobot")[0]+'/personal'))).expanduser()  # Path(os.getenv("HF_LEROBOT_HOME", default_cache_path)).expanduser() #Path("/content/drive/MyDrive/Hackathon/lerobot")
 print(HF_LEROBOT_HOME)
 
 
