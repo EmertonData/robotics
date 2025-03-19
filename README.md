@@ -773,6 +773,6 @@ python -m lerobot.scripts.control_robot `
   --control.episode_time_s=30 `
   --control.reset_time_s=30 `
   --control.num_episodes=10 `
-  --control.push_to_hub=true
+  --control.push_to_hub=true `
   --control.policy.path=outputs/train/act_so100_test/checkpoints/last/pretrained_model
 ```
