@@ -582,6 +582,9 @@ python -m lerobot.scripts.control_robot `
 
 Once you're familiar with teleoperation, you can record your first dataset with SO-100.
 
+**❗Before starting the recording, it is crucial to mark the position of your computer and the angle of its camera using tape or any other method. If you are using an external webcam, make sure to mark its position and angle as well. This ensures that your dataset remains as clean and consistent as possible.
+Once you have set up your recording environment, do not move your computer or adjust the camera angle until you have completed the evaluation phase. During this step, you will assess whether the model has learned properly from the dataset you created. Any changes in positioning before evaluation can introduce inconsistencies that may affect the model’s performance.❗**
+
 <details>
 <summary><strong>Hugging Face Hub Setup (Optional)</strong></summary>
 If you want to use the Hugging Face hub features for uploading your dataset and you haven't previously done it, make sure you've logged in using a write-access token, which can be generated from the [Hugging Face settings](https://huggingface.co/settings/tokens) for macOS:
@@ -770,6 +773,6 @@ python -m lerobot.scripts.control_robot `
   --control.episode_time_s=30 `
   --control.reset_time_s=30 `
   --control.num_episodes=10 `
-  --control.push_to_hub=true
+  --control.push_to_hub=true `
   --control.policy.path=outputs/train/act_so100_test/checkpoints/last/pretrained_model
 ```
